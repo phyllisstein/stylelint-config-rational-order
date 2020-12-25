@@ -52,7 +52,7 @@ module.exports = stylelint.createPlugin(
     }, {});
 
     const primaryOptions = configCreator.groupSettings(resolvedGroupSettings);
-    const secondaryOptions = configCreator.groupSettings(resolvedSecondarySettings);
+    const secondaryOptions = configCreator.secondarySettings(resolvedSecondarySettings);
 
     propertiesOrderRule(primaryOptions, secondaryOptions, context)(postcssRoot, postcssResult);
   },
