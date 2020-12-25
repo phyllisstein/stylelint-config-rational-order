@@ -30,14 +30,12 @@ exports.groupSettings = ({
 
 exports.secondarySettings = ({
   'disable-fix': disableFix,
-  'empty-line-before-unspecified': emptyLineBeforeBeforeUnspecified,
+  'empty-line-before-unspecified': emptyLineBeforeUnspecified,
   'empty-line-property-threshold': emptyLineMinimumPropertyThreshold,
-  'property-order': propertyOrder,
   unspecified,
 } = {}) => ({
   disableFix,
-  emptyLineBeforeBeforeUnspecified,
+  emptyLineBeforeUnspecified,
   emptyLineMinimumPropertyThreshold,
-  propertyOrder,
   unspecified,
 });

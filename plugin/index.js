@@ -8,13 +8,13 @@ const PER_GROUP_SETTINGS = {
   'border-in-box-model': [true, false],
   'empty-line-between-groups': ['always', 'never', 'threshold'],
   'empty-lines-within-groups': [true, false],
+  'property-order': ['flexible'],
 };
 
 const SECONDARY_SETTINGS = {
   'disable-fix': [true, false],
   'empty-line-before-unspecified': ['always', 'never', 'threshold'],
   'empty-line-property-threshold': [o => Number.isInteger(o)],
-  'property-order': ['flexible'],
   unspecified: ['top', 'bottom', 'bottomAlphabetical', 'ignore'],
 };
 
