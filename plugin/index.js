@@ -11,10 +11,10 @@ const PER_GROUP_SETTINGS = {
 };
 
 const SECONDARY_SETTINGS = {
-  'property-order': ['flexible'],
   'disable-fix': [true, false],
   'empty-line-before-unspecified': ['always', 'never', 'threshold'],
   'empty-line-property-threshold': [o => Number.isInteger(o)],
+  'property-order': ['flexible'],
   unspecified: ['top', 'bottom', 'bottomAlphabetical', 'ignore'],
 };
 
@@ -51,7 +51,10 @@ module.exports = stylelint.createPlugin(
       return acc;
     }, {});
 
-    const expectation = [[configCreator(resolvedGroupSettings)], resolvedSecondarySettings];
+    const expectation = [
+      configCreator.groupSettings(resolvedGroupSettings),
+      configCreator.secondarySettings(resolvedSecondarySettings),
+    ];
     propertiesOrderRule(expectation, context)(postcssRoot, postcssResult);
   },
 );

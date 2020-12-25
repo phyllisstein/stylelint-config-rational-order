@@ -6,7 +6,7 @@ const visual = require('../groups/visual');
 const animation = require('../groups/animation');
 const misc = require('../groups/misc');
 
-module.exports = ({
+exports.groupSettings = ({
   'border-in-box-model': borderInBoxModel = false,
   'empty-line-between-groups': emptyLineBefore,
   'empty-lines-within-groups': emptyLinesWithinGroups,
@@ -27,3 +27,17 @@ module.exports = ({
     groupName,
     order,
   }));
+
+exports.secondarySettings = ({
+  'disable-fix': disableFix,
+  'empty-line-before-unspecified': emptyLineBeforeBeforeUnspecified,
+  'empty-line-property-threshold': emptyLineMinimumPropertyThreshold,
+  'property-order': propertyOrder,
+  unspecified,
+} = {}) => ({
+  disableFix,
+  emptyLineBeforeBeforeUnspecified,
+  emptyLineMinimumPropertyThreshold,
+  propertyOrder,
+  unspecified,
+});
