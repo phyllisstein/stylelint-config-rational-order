@@ -51,11 +51,10 @@ module.exports = stylelint.createPlugin(
       return acc;
     }, {});
 
-    const expectation = [
-      configCreator.groupSettings(resolvedGroupSettings),
-      configCreator.secondarySettings(resolvedSecondarySettings),
-    ];
-    propertiesOrderRule(expectation, context)(postcssRoot, postcssResult);
+    const primaryOptions = configCreator.groupSettings(resolvedGroupSettings);
+    const secondaryOptions = configCreator.groupSettings(resolvedSecondarySettings);
+
+    propertiesOrderRule(primaryOptions, secondaryOptions, context)(postcssRoot, postcssResult);
   },
 );
 
